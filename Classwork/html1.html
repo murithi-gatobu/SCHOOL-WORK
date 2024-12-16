@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- To-Do List -->
+    <div class="section" id="todo-list">
+        <h2>To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- Factorial Calculator -->
+    <div class="section" id="factorial-calculator">
+        <h2>Factorial Calculator</h2>
+        <input type="number" id="factorialInput" placeholder="Enter a number">
+        <button onclick="calculateFactorial()">Calculate Factorial</button>
+        <p>Result: <span id="factorialResult"></span></p>
+    </div>
+
+    <!-- Simple Calculator-->
+    <div class="section" id="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <select id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        <button onclick="calculate()">Calculate</button>
+        <p>Result: <span id="calcResult"></span></p>
+    </div>
+    <!-- Real-Time Search Filter
+    <div class="section" id="search-filter">
+        <h2>Real-Time Search Filter</h2>
+        <input type="text" id="searchBox" placeholder="Search items" onkeyup="filterItems()">
+        <ul id="itemList">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+            <li>Date</li>
+            <li>Elderberry</li>
+        </ul>
+    </div>
+-->
+    <!-- Countdown Timer -->
+    <div class="section" id="countdown-timer">
+        <h2>Countdown Timer</h2>
+        <input type="number" id="timerInput" placeholder="Enter seconds">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+        <p>Time Remaining: <span id="timerDisplay">0</span> seconds</p>
+    </div>
+
+    <script>
+        // To-Do List Script
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const task = taskInput.value.trim();
+            if (task !== "") {
+                const taskList = document.getElementById("taskList");
+                const li = document.createElement("li");
+                li.innerHTML = $;{task} <button onclick="this.parentElement.remove()">Delete</button>;
+                taskList.appendChild(li);
+                taskInput.value = "";
+            }
+        }
+
+        // Factorial Calculator Script
+        function calculateFactorial() {
+            const num = parseInt(document.getElementById("factorialInput").value);
+            let result = 1;
+            if (num < 0) {
+                result = "Invalid input";
+            } else {
+                for (let i = 1; i <= num; i++) {
+                    result *= i;
+                }
+            }
+            document.getElementById("factorialResult").textContent = result;
+        }
+
+        // Simple Calculator Script
+        function calculate() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operation = document.getElementById("operation").value;
+            let result;
+
+            switch (operation) {
+                case "add":
+                    result = num1 + num2;
+                    break;
+                case "subtract":
+                    result = num1 - num2;
+                    break;
+                case "multiply":
+                    result = num1 * num2;
+                    break;
+                case "divide":
+                    result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+                    break;
+            }
+            document.getElementById("calcResult").textContent = result;
+        }
+
+        // Real-Time Search Filter Script
+        function filterItems() {
+            const query = document.getElementById("searchBox").value.toLowerCase();
+            const items = document.getElementById("itemList").getElementsByTagName("li");
+            for (const item of items) {
+                item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
+            }
+        }
+
+        // Countdown Timer Script
+        let timer, timeRemaining;
+        function startTimer() {
+            const input = parseInt(document.getElementById("timerInput").value);
+            if (!isNaN(input) && input > 0) {
+                timeRemaining = input;
+                timer = setInterval(() => {
+                    if (timeRemaining > 0) {
+                        timeRemaining--;
+                        document.getElementById("timerDisplay").textContent = timeRemaining;
+                    } else {
+                        clearInterval(timer);
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            document.getElementById("timerDisplay").textContent = 0;
+        }
+    </script>
+</body>
+</html>
