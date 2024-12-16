@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding and viewport settings for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
+    <title>My Portfolio</title>
+
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Caleb Murithi Gatobu</h1> <!-- Main heading with the name -->
+        <p>Web Developer | Designer | Programmer</p> <!-- Subtitle with roles -->
+
+        <!-- Navigation menu for easy access to sections -->
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li> <!-- Link to About Me section -->
+                <li><a href="#projects">Projects</a></li> <!-- Link to Projects section -->
+                <li><a href="#contact">Contact</a></li> <!-- Link to Contact section -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2> <!-- Subheading for About Me -->
+        <p>I'm a passionate web developer with experience in designing and developing responsive websites using the latest web technologies.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2> <!-- Subheading for Projects -->
+        <div class="project-grid">
+            <div class="project">
+                <h3>Project 1</h3> <!-- Title for Project 1 -->
+                <p>A web-based application for tracking expenses.</p> <!-- Description of Project 1 -->
+            </div>
+            <div class="project">
+                <h3>Project 2</h3> <!-- Title for Project 2 -->
+                <p>A portfolio website showcasing my designs and development work.</p> <!-- Description of Project 2 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2> <!-- Subheading for Contact -->
+        <form action="#" method="POST">
+            <label for="name">Name:</label> <!-- Label for Name input -->
+            <input type="text" id="name" name="name" required> <!-- Input field for Name -->
+
+            <label for="email">Email:</label> <!-- Label for Email input -->
+            <input type="email" id="email" name="email" required> <!-- Input field for Email -->
+
+            <label for="message">Message:</label> <!-- Label for Message input -->
+            <textarea id="message" name="message" required></textarea> <!-- Textarea for Message -->
+
+            <button type="submit">Send Message</button> <!-- Submit button -->
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="text-align: center">&copy; 2024 Caleb Murithi Gatobu. All rights reserved.</p> <!-- Copyright notice -->
+    </footer>
+</body>
+</html>

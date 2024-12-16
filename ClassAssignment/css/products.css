@@ -1,0 +1,44 @@
+/* Flexbox Navigation */
+/* Styling the navigation list with Flexbox to align items evenly */
+nav ul {
+    display: flex;        /* Use flexbox for layout */
+    justify-content: space-around;  /* Distribute list items evenly */
+    list-style-type: none;  /* Remove default bullet points */
+    background-color: #333;  /* Set background color for the nav bar */
+    padding: 12px;  /* Add padding around the list */
+}
+
+/* Styling the links in the navigation bar */
+nav ul li a {
+    color: white;  /* Set link text color to white */
+    text-decoration: none;  /* Remove underline from links */
+}
+
+/* Grid Layout for Products */
+/* Creating a grid layout for the products */
+.grid-container {
+    display: grid;  /* Use grid for layout */
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns, each taking equal space */
+    grid-gap: 20px;  /* Set gap between grid items */
+    padding: 20px;  /* Add padding around the grid */
+}
+
+/* Styling individual product items */
+.product {
+    border: 1px solid #ddd;  /* Add a light border around products */
+    padding: 10px;  /* Add padding inside product containers */
+    text-align: center;  /* Center-align the content */
+}
+
+/* Styling for product images */
+.product img {
+    width: 100%;  /* Make the image take up the full width of the container */
+    height: auto;  /* Maintain aspect ratio of the image */
+}
+
+/* Responsive Design */
+/* Adjust grid layout for smaller screens */
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;  /* Change to a single column layout */}
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding and viewport settings for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
+    <title>Audio and Video Integration</title>
+
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <!-- Main heading for the webpage -->
+    <h1>Media Integration with HTML5</h1>
+
+    <!-- Audio Element Section -->
+    <section>
+        <h2>Listen to the Audio</h2>
+        <!-- Audio player with controls for playback -->
+        <audio controls>
+            <!-- Source of the audio file -->
+            <source src="audio/sample-audio.mp3" type="audio/mp3">
+            <!-- Fallback message for browsers that do not support the audio element -->
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <!-- Video Element Section -->
+    <section>
+        <h2>Watch the Video</h2>
+        <!-- Video player with specified width, height, and controls for playback -->
+        <video width="640" height="360" controls>
+            <!-- Source of the video file -->
+            <source src="" type="video/mp4">
+            <!-- Fallback message for browsers that do not support the video element -->
+            Your browser does not support the video tag.
+        </video>
+    </section>
+</body>
+</html>
